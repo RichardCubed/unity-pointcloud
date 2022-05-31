@@ -40,6 +40,7 @@ namespace Assets.Runtime
                     var rand = new System.Random();
                     buffer_indices = new NativeArray<int>(300000, Allocator.Persistent);
                     buffer_vertices = new NativeArray<Vertex>(buffer_indices.Length, Allocator.Persistent);
+                    cycle_started = true;
 
                     frameUpdateJob = new UDPJob()
                     {
@@ -50,7 +51,6 @@ namespace Assets.Runtime
                     };
 
                     jHandle = frameUpdateJob.Schedule();
-                    cycle_started = true;
                 }
             }
             else
@@ -73,6 +73,7 @@ namespace Assets.Runtime
         {
             if (cycle_started)
             {
+                jHandle.Complete();
                 buffer_indices.Dispose();
                 buffer_vertices.Dispose();
             }
