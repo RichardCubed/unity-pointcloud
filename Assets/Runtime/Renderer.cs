@@ -17,8 +17,7 @@ namespace Assets.Runtime
         public void Start()
         {
             // Create a new buffer for our streamed vertex data
-            _buffer = new Buffer(500000);
-            _buffer.Randomise();
+            _buffer = new Buffer(300000);
             
             // Create a mesh 
             _mesh = new Mesh

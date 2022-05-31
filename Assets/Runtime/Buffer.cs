@@ -26,19 +26,5 @@ namespace Assets.Runtime
             Vertices.Dispose();
         }
 
-
-        public void Randomise()
-        {
-            for (var i = 0; i < Vertices.Length; i++)
-            {
-                Indices[i] = i;
-                Vertices[i] = new Vertex
-                {
-                    Position = new float3(Random.Range(-50f, 50f), Random.Range(-50f, 50f), Random.Range(-50f, 50f)), 
-                    Color = new float4(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f))
-                };
-            }
-        }
-
     }
 }
