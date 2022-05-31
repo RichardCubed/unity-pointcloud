@@ -70,5 +70,11 @@ namespace Assets.Runtime
             oldBuffer.disposeAssets();
         }
 
+
+        private void OnDestroy()
+        {
+            _buffer.disposeAssets();
+        }
+
     }
 }

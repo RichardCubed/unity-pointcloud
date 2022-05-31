@@ -22,8 +22,8 @@ namespace Assets.Runtime
 
         ~Buffer()
         {
-            Indices.Dispose();
-            Vertices.Dispose();
+            //Indices.Dispose();
+            //Vertices.Dispose();
         }
 
 
