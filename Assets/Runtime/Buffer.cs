@@ -20,13 +20,6 @@ namespace Assets.Runtime
         }
 
 
-        ~Buffer()
-        {
-            //Indices.Dispose();
-            //Vertices.Dispose();
-        }
-
-
         public void disposeAssets()
         {
             Indices.Dispose();

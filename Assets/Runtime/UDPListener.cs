@@ -18,39 +18,64 @@ namespace Assets.Runtime
         private JobHandle jHandle;
         private UDPJob frameUpdateJob;
 
+        private float lastUpdateTime;
+        private bool cycle_started = false;
+
         public NativeArray<int> buffer_indices;
         public NativeArray<Vertex> buffer_vertices;
 
 
-
-        public void Update()
+        private void Start()
         {
-            var rand = new System.Random();
-            buffer_indices = new NativeArray<int>(rand.Next(150000), Allocator.Persistent);
-            buffer_vertices = new NativeArray<Vertex>(buffer_indices.Length, Allocator.Persistent);
-
-            frameUpdateJob = new UDPJob()
-            {
-                _indices = buffer_indices,
-                _vertices = buffer_vertices,
-                port = port,
-                run = true
-            };
-
-            jHandle = frameUpdateJob.Schedule();
+            lastUpdateTime = Time.time;
         }
 
 
-        public void LateUpdate()
+        public void Update()
         {
-            //persistentJob.run = false;
-            jHandle.Complete();
-            Buffer transferBuffer = new Buffer(buffer_indices.Length);
-            frameUpdateJob._vertices.CopyTo(transferBuffer.Vertices);
-            frameUpdateJob._indices.CopyTo(transferBuffer.Indices);
-            pointRenderer.swapBuffer(transferBuffer);
-            buffer_indices.Dispose();
-            buffer_vertices.Dispose();
+            if (Time.time - lastUpdateTime < 0.08)
+            {
+                if (!cycle_started)
+                {
+                    var rand = new System.Random();
+                    buffer_indices = new NativeArray<int>(300000, Allocator.Persistent);
+                    buffer_vertices = new NativeArray<Vertex>(buffer_indices.Length, Allocator.Persistent);
+
+                    frameUpdateJob = new UDPJob()
+                    {
+                        _indices = buffer_indices,
+                        _vertices = buffer_vertices,
+                        port = port,
+                        run = true
+                    };
+
+                    jHandle = frameUpdateJob.Schedule();
+                    cycle_started = true;
+                }
+            }
+            else
+            {
+                //frameUpdateJob.run = false;
+                jHandle.Complete();
+                Buffer transferBuffer = new Buffer(buffer_indices.Length);
+                frameUpdateJob._vertices.CopyTo(transferBuffer.Vertices);
+                frameUpdateJob._indices.CopyTo(transferBuffer.Indices);
+                pointRenderer.swapBuffer(transferBuffer);
+                buffer_indices.Dispose();
+                buffer_vertices.Dispose();
+                cycle_started = false;
+                lastUpdateTime = Time.time;
+            }
+        }
+
+
+        private void OnDestroy()
+        {
+            if (cycle_started)
+            {
+                buffer_indices.Dispose();
+                buffer_vertices.Dispose();
+            }
         }
 
 
