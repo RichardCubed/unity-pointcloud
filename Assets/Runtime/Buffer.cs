@@ -27,6 +27,13 @@ namespace Assets.Runtime
         }
 
 
+        public void disposeAssets()
+        {
+            Indices.Dispose();
+            Vertices.Dispose();
+        }
+
+
         public void Randomise()
         {
             for (var i = 0; i < Vertices.Length; i++)
@@ -40,11 +47,5 @@ namespace Assets.Runtime
             }
         }
 
-
-        public void updateBuffer(NativeArray<int> newInds, NativeArray<Vertex> newVerts)
-        {
-            Indices = newInds;
-            Vertices = newVerts;
-        }
     }
 }

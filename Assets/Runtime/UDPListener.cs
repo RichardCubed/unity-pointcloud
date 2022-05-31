@@ -32,6 +32,10 @@ namespace Assets.Runtime
 
         public void Update()
         {
+            var rand = new System.Random();
+            buffer_indices = new NativeArray<int>(rand.Next(150000), Allocator.Persistent);
+            buffer_vertices = new NativeArray<Vertex>(buffer_indices.Length, Allocator.Persistent);
+
             persistentJob = new UDPJob()
             {
                 _indices = buffer_indices,
@@ -48,9 +52,12 @@ namespace Assets.Runtime
         {
             //persistentJob.run = false;
             jHandle.Complete();
-            persistentJob._vertices.CopyTo(pointRenderer._buffer.Vertices);
-            persistentJob._indices.CopyTo(pointRenderer._buffer.Indices);
-            //pointRenderer.updateBuffer(persistentJob._indices, persistentJob._vertices);
+            Buffer transferBuffer = new Buffer(buffer_indices.Length);
+            persistentJob._vertices.CopyTo(transferBuffer.Vertices);
+            persistentJob._indices.CopyTo(transferBuffer.Indices);
+            pointRenderer.swapBuffer(transferBuffer);
+            buffer_indices.Dispose();
+            buffer_vertices.Dispose();
         }
 
 

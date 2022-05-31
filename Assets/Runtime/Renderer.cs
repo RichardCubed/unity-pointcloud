@@ -17,7 +17,7 @@ namespace Assets.Runtime
         public void Start()
         {
             // Create a new buffer for our streamed vertex data
-            _buffer = new Buffer(500000);
+            _buffer = new Buffer(150000);
             _buffer.Randomise();
             
             // Create a mesh 
@@ -63,9 +63,12 @@ namespace Assets.Runtime
         }
 
 
-        public void updateBuffer(NativeArray<int> newInds, NativeArray<Vertex> newVerts)
+        public void swapBuffer(Buffer newBuffer)
         {
-            _buffer.updateBuffer(newInds, newVerts);
+            var oldBuffer = _buffer;
+            _buffer = newBuffer;
+            oldBuffer.disposeAssets();
         }
+
     }
 }
