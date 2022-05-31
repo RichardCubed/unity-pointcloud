@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="MaterialInspector.cs" t="Include" />
+        </e>
+        <e p="Materials" t="Include">
+          <e p="Points.shader" t="Include" />
+        </e>
+        <e p="Runtime" t="Include">
+          <e p="Buffer.cs" t="Include" />
+          <e p="Renderer.cs" t="Include" />
+          <e p="Vertex.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Temp/Bin" t="ExcludeRecursive" />
+      <e p="unity-pointcloud.sln" t="IncludeFlat" />
+    </e>
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.3/resharper-host/local/Transient/Rider/v203/SolutionCaches/_unity-pointcloud.-15374554.00" t="ExcludeRecursive" />
+  </component>
+</project>

@@ -320,8 +320,12 @@
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/NetStandard/ref/2.1.0/netstandard.dll"
+-r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.Mathematics.Editor.ref.dll"
+-r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.Mathematics.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.Rider.Editor.ref.dll"
-"Assets/Runtime/KinectRenderer.cs"
+"Assets/Runtime/Buffer.cs"
+"Assets/Runtime/Renderer.cs"
+"Assets/Runtime/Vertex.cs"
 -langversion:9.0
 
 /deterministic

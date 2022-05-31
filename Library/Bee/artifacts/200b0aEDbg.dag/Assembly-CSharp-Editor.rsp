@@ -402,8 +402,10 @@
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/System.Xml.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/System.Xml.Linq.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/System.Xml.Serialization.dll"
--r:"/Users/richardadams/Desktop/PCRenderer/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+-r:"/Users/richardadams/Documents/unity/unity-pointcloud/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Assembly-CSharp.ref.dll"
+-r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.Mathematics.Editor.ref.dll"
+-r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.Mathematics.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/Unity.Rider.Editor.ref.dll"
 "Assets/Editor/MaterialInspector.cs"
 -langversion:9.0

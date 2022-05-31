@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Points
-  m_Shader: {fileID: 4800000, guid: 1baec256dca7c1642b87d05510e75a3f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 9a493256765694738822f872d1f4f15c, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -70,7 +70,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PointSize: 4.9
+    - _PointSize: 4
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -79,5 +79,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Tint: {r: 0.11320752, g: 0.11320752, b: 0.11320752, a: 1}
+    - _Tint: {r: 0.8773585, g: 0.09518514, b: 0.09518514, a: 1}
   m_BuildTextureStacks: []

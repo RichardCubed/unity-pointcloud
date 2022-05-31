@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8b97382e-210b-4ad1-4d69-92d830aa9a86}</ProjectGuid>
+    <ProjectGuid>{5758867a-85ea-ea2e-5cec-cfe504c1dc91}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -298,7 +298,7 @@
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
      </Reference>
      <Reference Include="nunit.framework">
-     <HintPath>/Users/richardadams/Desktop/PCRenderer/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+     <HintPath>/Users/richardadams/Documents/unity/unity-pointcloud/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
      </Reference>
      <Reference Include="mscorlib">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/mscorlib.dll</HintPath>
@@ -901,12 +901,18 @@
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/Facades/netstandard.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>/Users/richardadams/Desktop/PCRenderer/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     <HintPath>/Users/richardadams/Documents/unity/unity-pointcloud/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>/Users/richardadams/Documents/unity/unity-pointcloud/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics">
+     <HintPath>/Users/richardadams/Documents/unity/unity-pointcloud/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{559a4bda-d258-3f63-84c8-52145553e683}</Project>
+      <Project>{14d5cdc5-f5fd-894d-f594-9d527d4c18af}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

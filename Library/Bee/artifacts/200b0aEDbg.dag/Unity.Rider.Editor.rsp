@@ -403,7 +403,7 @@
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/System.Xml.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/System.Xml.Linq.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.3.0f1/Unity.app/Contents/UnityReferenceAssemblies/unity-4.8-api/System.Xml.Serialization.dll"
--r:"/Users/richardadams/Desktop/PCRenderer/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+-r:"/Users/richardadams/Documents/unity/unity-pointcloud/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
 "Library/PackageCache/com.unity.ide.rider@3.0.13/Rider/Editor/Discovery.cs"
 "Library/PackageCache/com.unity.ide.rider@3.0.13/Rider/Editor/EditorPluginInterop.cs"
 "Library/PackageCache/com.unity.ide.rider@3.0.13/Rider/Editor/LoggingLevel.cs"
