@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.Collections;
 using UnityEngine.Rendering;
 
 namespace Assets.Runtime
@@ -8,7 +9,7 @@ namespace Assets.Runtime
         private Mesh _mesh;
         private MeshFilter _filter;
 
-        private Buffer _buffer;
+        public Buffer _buffer;
 
         /// <summary>
         /// Initialise
@@ -16,7 +17,7 @@ namespace Assets.Runtime
         public void Start()
         {
             // Create a new buffer for our streamed vertex data
-            _buffer = new Buffer(100000);
+            _buffer = new Buffer(500000);
             _buffer.Randomise();
             
             // Create a mesh 
@@ -59,6 +60,12 @@ namespace Assets.Runtime
             // Update
             _mesh.SetSubMesh(0, subDescriptor);
             _mesh.UploadMeshData(false);
+        }
+
+
+        public void updateBuffer(NativeArray<int> newInds, NativeArray<Vertex> newVerts)
+        {
+            _buffer.updateBuffer(newInds, newVerts);
         }
     }
 }

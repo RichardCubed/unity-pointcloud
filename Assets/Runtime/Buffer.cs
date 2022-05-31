@@ -19,6 +19,14 @@ namespace Assets.Runtime
             Vertices = new NativeArray<Vertex>(size, Allocator.Persistent);
         }
 
+
+        ~Buffer()
+        {
+            Indices.Dispose();
+            Vertices.Dispose();
+        }
+
+
         public void Randomise()
         {
             for (var i = 0; i < Vertices.Length; i++)
@@ -30,6 +38,13 @@ namespace Assets.Runtime
                     Color = new float4(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f))
                 };
             }
+        }
+
+
+        public void updateBuffer(NativeArray<int> newInds, NativeArray<Vertex> newVerts)
+        {
+            Indices = newInds;
+            Vertices = newVerts;
         }
     }
 }

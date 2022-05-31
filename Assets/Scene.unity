@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 1551888549}
   - component: {fileID: 1551888548}
   - component: {fileID: 1551888551}
+  - component: {fileID: 1551888552}
   m_Layer: 0
   m_Name: Stream
   m_TagString: Untagged
@@ -294,6 +295,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25980120348b1451e988a8d57b55156b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1551888552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551888547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc1a8178458e9643a91a374cb54994a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointRenderer: {fileID: 1551888551}
+  port: 9001
 --- !u!1 &1557938748
 GameObject:
   m_ObjectHideFlags: 0
