@@ -16,18 +16,11 @@ namespace Assets.Runtime
         // public string IP = "127.0.0.1"; default local
         public int port = 9001;
         private JobHandle jHandle;
-        private UDPJob persistentJob;
+        private UDPJob frameUpdateJob;
 
         public NativeArray<int> buffer_indices;
         public NativeArray<Vertex> buffer_vertices;
 
-
-        public IEnumerator Start()
-        {
-            yield return new WaitUntil(() => pointRenderer._buffer != null);
-            buffer_indices = new NativeArray<int>(pointRenderer._buffer.Vertices.Length, Allocator.Persistent);
-            buffer_vertices = new NativeArray<Vertex>(pointRenderer._buffer.Vertices.Length, Allocator.Persistent);
-        }
 
 
         public void Update()
@@ -36,7 +29,7 @@ namespace Assets.Runtime
             buffer_indices = new NativeArray<int>(rand.Next(150000), Allocator.Persistent);
             buffer_vertices = new NativeArray<Vertex>(buffer_indices.Length, Allocator.Persistent);
 
-            persistentJob = new UDPJob()
+            frameUpdateJob = new UDPJob()
             {
                 _indices = buffer_indices,
                 _vertices = buffer_vertices,
@@ -44,7 +37,7 @@ namespace Assets.Runtime
                 run = true
             };
 
-            jHandle = persistentJob.Schedule();
+            jHandle = frameUpdateJob.Schedule();
         }
 
 
@@ -53,8 +46,8 @@ namespace Assets.Runtime
             //persistentJob.run = false;
             jHandle.Complete();
             Buffer transferBuffer = new Buffer(buffer_indices.Length);
-            persistentJob._vertices.CopyTo(transferBuffer.Vertices);
-            persistentJob._indices.CopyTo(transferBuffer.Indices);
+            frameUpdateJob._vertices.CopyTo(transferBuffer.Vertices);
+            frameUpdateJob._indices.CopyTo(transferBuffer.Indices);
             pointRenderer.swapBuffer(transferBuffer);
             buffer_indices.Dispose();
             buffer_vertices.Dispose();
